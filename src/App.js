@@ -42,7 +42,7 @@ const App = () => {
     formData.append('style', selectedStyle); // Append the selected style
 
     try {
-      const backendUrl = 'https://ai-cartoonizer-backend.onrender.com/cartoonize/'; 
+      const backendUrl = 'http://127.0.0.1:8000/cartoonize/'; 
       const response = await fetch(backendUrl, {
         method: 'POST',
         body: formData,
