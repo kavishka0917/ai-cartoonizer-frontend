@@ -42,7 +42,9 @@ const App = () => {
     formData.append('style', selectedStyle); // Append the selected style
 
     try {
-      const backendUrl = 'http://127.0.0.1:8000/cartoonize/'; 
+      // Use an environment variable for the backend URL
+      // Default to a local URL if the environment variable is not set (e.g., during local dev)
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://127.0.0.1:8000/cartoonize/'; 
       const response = await fetch(backendUrl, {
         method: 'POST',
         body: formData,
